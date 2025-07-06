@@ -1,0 +1,89 @@
+/* src/pages/LoginPage/LoginForm.css */
+.login-container {
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* 白色质感背景 + 粒子层支持 */
+    background: linear-gradient(135deg, #f0f4f8 0%, #d9e8fc 50%, #e8f0ff 100%);
+    background-size: 200% 200%;
+    animation: gradientShift 16s ease infinite;
+
+    overflow: hidden;
+    z-index: 0;
+}
+
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.login-panel {
+    width: 100%;
+    max-width: 400px;
+    padding: 36px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 20px;
+    box-shadow: 0 12px 40px rgba(173, 216, 255, 0.3);
+    border: 1px solid rgba(180, 210, 255, 0.5);
+    backdrop-filter: blur(14px);
+    animation: fadeInUp 0.6s ease-out;
+    z-index: 1;
+}
+
+.login-header {
+    text-align: center;
+    margin-bottom: 24px;
+    color: #1D2129;
+}
+
+.login-footer {
+    text-align: center;
+    margin-top: 24px;
+    color: #6B7785;
+    font-size: 12px;
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 按钮蓝白渐变 */
+.arco-btn-primary {
+    background-image: linear-gradient(to right, #90c6ff, #5a8bff);
+    border: none;
+    color: #fff;
+}
+
+.arco-btn-primary:hover {
+    filter: brightness(1.08);
+    transform: scale(1.02);
+    transition: all 0.3s ease;
+}
+
+/* 输入框颜色适配蓝白风格 */
+.login-panel input,
+.login-panel .arco-typography {
+    color: #1D2129;
+}
+
+.login-panel .arco-input::placeholder {
+    color: #A9AEB8;
+}
