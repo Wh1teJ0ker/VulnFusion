@@ -1,6 +1,7 @@
 package auth
 
 import (
+	"VulnFusion/internal/config"
 	"github.com/gin-gonic/gin"
 	"net/http"
 )
@@ -14,7 +15,7 @@ func JWTAuthMiddleware() gin.HandlerFunc {
 			return
 		}
 
-		claims, err := auth.ParseToken(tokenString)
+		claims, err := ParseToken(tokenString)
 		if err != nil {
 			BuildErrorResponse(ctx, http.StatusUnauthorized, "TOKEN_INVALID", err.Error())
 			ctx.Abort()
@@ -35,7 +36,7 @@ func RefreshTokenMiddleware() gin.HandlerFunc {
 			return
 		}
 
-		claims, err := auth.ParseToken(refreshToken)
+		claims, err := ParseToken(refreshToken)
 		if err != nil {
 			BuildErrorResponse(ctx, http.StatusUnauthorized, "REFRESH_TOKEN_INVALID", err.Error())
 			ctx.Abort()
@@ -43,7 +44,7 @@ func RefreshTokenMiddleware() gin.HandlerFunc {
 		}
 
 		// 自动生成新的 Access Token
-		newToken, err := auth.GenerateToken(claims.UserID, claims.Username, claims.Role, auth.DefaultTokenTTL())
+		newToken, err := GenerateToken(claims.UserID, claims.Username, claims.Role, config.DefaultTokenTTL())
 		if err != nil {
 			BuildErrorResponse(ctx, http.StatusInternalServerError, "TOKEN_GENERATION_FAILED", "生成新 token 失败")
 			ctx.Abort()
@@ -57,7 +58,7 @@ func RefreshTokenMiddleware() gin.HandlerFunc {
 	}
 }
 
-func InjectClaimsToContext(ctx *gin.Context, claims *auth.CustomClaims) {
+func InjectClaimsToContext(ctx *gin.Context, claims *CustomClaims) {
 	ctx.Set("user_id", claims.UserID)
 	ctx.Set("username", claims.Username)
 	ctx.Set("role", claims.Role)

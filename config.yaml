@@ -1,0 +1,19 @@
+# 项目基础配置
+app_name: VulnFusion
+port: 8080
+env: development
+
+# JWT 配置
+jwt:
+  secret: ""                     # 可留空自动生成（系统首次运行会动态生成）
+  access_token_ttl: 15m         # Access Token 有效期（15分钟）
+  refresh_token_ttl: 168h       # Refresh Token 有效期（7天）
+
+# 管理员账户（首次初始化用）
+admin:
+  username: admin
+  password: admin123            # 初始密码，建议运行后强制修改
+
+# 数据库配置
+database:
+  path: ./data/vulnfusion.db    # SQLite 文件路径

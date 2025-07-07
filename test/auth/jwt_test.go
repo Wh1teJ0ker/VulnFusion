@@ -1,5 +1,5 @@
 // jwt_test.go
-package test
+package auth
 
 import (
 	"encoding/base64"
