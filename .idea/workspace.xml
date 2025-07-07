@@ -5,14 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9745f663-ceb5-4e1d-8db3-bb7de9d75ce9" name="更改" comment="add dev">
-      <change afterPath="$PROJECT_DIR$/test/auth/middleware_test.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/internal/db/model.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/internal/model/result.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/internal/model/task.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/internal/model/user.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/internal/auth/middleware.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/auth/middleware.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/internal/config/config.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/config/config.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/storage/db.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/storage/db.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/jwt_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/test/auth/jwt_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal/log/log.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/log/log.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal/storage/db.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/db/db.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal/storage/models/result.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal/storage/models/task.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal/storage/models/user.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal/utils/crypto.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/utils/crypto.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal/utils/helpers.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/utils/helpers.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/auth/jwt_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/test/auth/jwt_test.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,54 +75,59 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;DefaultGoTemplateProperty&quot;: &quot;Go File&quot;,
-    &quot;Go 构建.cli_nuclei.executor&quot;: &quot;Run&quot;,
-    &quot;Go 构建.cli_plugin.executor&quot;: &quot;Run&quot;,
-    &quot;Go 构建.cli_scan.executor&quot;: &quot;Run&quot;,
-    &quot;Go 构建.go build main.go.executor&quot;: &quot;Run&quot;,
-    &quot;Go 构建.init.executor&quot;: &quot;Run&quot;,
-    &quot;Go 构建.main.executor&quot;: &quot;Run&quot;,
-    &quot;Go 构建.main.go.executor&quot;: &quot;Run&quot;,
-    &quot;Go 构建.scan.executor&quot;: &quot;Run&quot;,
-    &quot;Go 构建.web.executor&quot;: &quot;Run&quot;,
-    &quot;Go 测试.go test VulnFusion.executor&quot;: &quot;Run&quot;,
-    &quot;Go 测试.jwt_test.go.executor&quot;: &quot;Run&quot;,
-    &quot;Go 测试.middleware_test.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.go.formatter.settings.were.checked&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.go.migrated.go.modules.settings&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.go.modules.go.list.on.any.changes.was.set&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;go.import.settings.migrated&quot;: &quot;true&quot;,
-    &quot;go.sdk.automatically.set&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/joker/code/VulnFusion&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;npm.dev.executor&quot;: &quot;Run&quot;,
-    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "DefaultGoTemplateProperty": "Go File",
+    "Go 构建.cli_nuclei.executor": "Run",
+    "Go 构建.cli_plugin.executor": "Run",
+    "Go 构建.cli_scan.executor": "Run",
+    "Go 构建.go build main.go.executor": "Run",
+    "Go 构建.init.executor": "Run",
+    "Go 构建.main.executor": "Run",
+    "Go 构建.main.go.executor": "Run",
+    "Go 构建.scan.executor": "Run",
+    "Go 构建.web.executor": "Run",
+    "Go 测试.go test VulnFusion.executor": "Run",
+    "Go 测试.jwt_test.go.executor": "Run",
+    "Go 测试.middleware_test.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.go.formatter.settings.were.checked": "true",
+    "RunOnceActivity.go.migrated.go.modules.settings": "true",
+    "RunOnceActivity.go.modules.go.list.on.any.changes.was.set": "true",
+    "git-widget-placeholder": "main",
+    "go.import.settings.migrated": "true",
+    "go.sdk.automatically.set": "true",
+    "last_opened_file_path": "/Users/joker/code/VulnFusion",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "npm.dev.executor": "Run",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "redis",
+      "sqlite"
+    ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/bin" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/internal/storage" />
+      <recent name="$PROJECT_DIR$/internal" />
+      <recent name="$PROJECT_DIR$/internal/storage/db" />
       <recent name="$PROJECT_DIR$/test/auth" />
       <recent name="$PROJECT_DIR$/web/frontend/backup" />
-      <recent name="$PROJECT_DIR$/web/frontend/src/pages" />
-      <recent name="$PROJECT_DIR$/data/plugins/python" />
-      <recent name="$PROJECT_DIR$/internal/plugin/docker" />
     </key>
   </component>
-  <component name="RunManager" selected="Go 测试.jwt_test.go">
+  <component name="RunManager" selected="Go 测试.middleware_test">
     <configuration name="jwt_test.go" type="GoTestRunConfiguration" factoryName="Go Test">
       <module name="VulnFusion" />
       <working_directory value="$PROJECT_DIR$" />

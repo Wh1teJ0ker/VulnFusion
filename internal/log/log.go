@@ -12,15 +12,6 @@ import (
 var logger *zap.SugaredLogger
 
 // InitLogger 初始化日志系统，配置 zap + lumberjack 实现日志切割与格式化输出
-func InitLogger(logFile string, level string) error {
-	core, err := buildLoggerCore(logFile, level)
-	if err != nil {
-		return err
-	}
-	// 创建 sugared logger，添加调用信息
-	logger = zap.New(core, zap.AddCaller(), zap.AddCallerSkip(1)).Sugar()
-	return nil
-}
 
 // buildLoggerCore 构建 zapcore.Core，包含日志编码器、日志等级与输出目的地
 func buildLoggerCore(logFile string, level string) (zapcore.Core, error) {
@@ -71,19 +62,13 @@ func getConsoleEncoder() zapcore.Encoder {
 }
 
 // Debug 输出 DEBUG 等级日志
-func Debug(format string, args ...interface{}) { logger.Debugf(format, args...) }
 
 // Info 输出 INFO 等级日志
 func Info(format string, args ...interface{}) { logger.Infof(format, args...) }
 
 // Warn 输出 WARN 等级日志
-func Warn(format string, args ...interface{}) { logger.Warnf(format, args...) }
 
 // Error 输出 ERROR 等级日志
 func Error(format string, args ...interface{}) { logger.Errorf(format, args...) }
 
 // Fatal 输出 FATAL 等级日志并退出程序
-func Fatal(format string, args ...interface{}) {
-	logger.Fatalf(format, args...)
-	os.Exit(1)
-}

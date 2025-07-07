@@ -1,7 +1,6 @@
 package auth
 
 import (
-	"VulnFusion/internal/config"
 	"github.com/gin-gonic/gin"
 	"net/http"
 )
@@ -24,37 +23,6 @@ func JWTAuthMiddleware() gin.HandlerFunc {
 
 		InjectClaimsToContext(ctx, claims)
 		ctx.Next()
-	}
-}
-
-func RefreshTokenMiddleware() gin.HandlerFunc {
-	return func(ctx *gin.Context) {
-		refreshToken, err := ExtractRefreshTokenFromRequest(ctx)
-		if err != nil {
-			BuildErrorResponse(ctx, http.StatusUnauthorized, "REFRESH_TOKEN_MISSING", err.Error())
-			ctx.Abort()
-			return
-		}
-
-		claims, err := ParseToken(refreshToken)
-		if err != nil {
-			BuildErrorResponse(ctx, http.StatusUnauthorized, "REFRESH_TOKEN_INVALID", err.Error())
-			ctx.Abort()
-			return
-		}
-
-		// 自动生成新的 Access Token
-		newToken, err := GenerateToken(claims.UserID, claims.Username, claims.Role, config.DefaultTokenTTL())
-		if err != nil {
-			BuildErrorResponse(ctx, http.StatusInternalServerError, "TOKEN_GENERATION_FAILED", "生成新 token 失败")
-			ctx.Abort()
-			return
-		}
-
-		ctx.JSON(http.StatusOK, gin.H{
-			"access_token": newToken,
-		})
-		ctx.Abort()
 	}
 }
 
