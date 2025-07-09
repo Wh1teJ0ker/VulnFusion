@@ -55,7 +55,6 @@ func InitDatabase(dbPath string) (*gorm.DB, error) {
 	return db, nil
 }
 
-// AutoRebuildModels 检查并重建模型表结构（字段缺失/冗余/类型不一致）
 func AutoRebuildModels(db *gorm.DB) error {
 	modelsToCheck := []interface{}{
 		&User{},
@@ -106,15 +105,27 @@ func AutoRebuildModels(db *gorm.DB) error {
 
 		log.Info("检测到模型 [%s] 字段变化，重建中...", tableName)
 
+		// 备份原表
 		if err := db.Migrator().RenameTable(model, tempTableName); err != nil {
 			log.Error("重命名表 %s 失败: %v", tableName, err)
 			return err
 		}
+
+		// 💡 先删除冲突索引（如存在）
+		for _, idx := range stmt.Schema.ParseIndexes() {
+			_ = db.Migrator().DropIndex(model, idx.Name)
+		}
+
+		// 显式删除表，避免 index already exists 错误
+		_ = db.Migrator().DropTable(tableName)
+
+		// 重建新表
 		if err := db.Migrator().CreateTable(model); err != nil {
 			log.Error("重建表 %s 失败: %v", tableName, err)
 			return err
 		}
 
+		// 数据迁移
 		insertSQL := fmt.Sprintf(
 			"INSERT INTO `%s` (%s) SELECT %s FROM `%s`",
 			tableName,
@@ -127,6 +138,7 @@ func AutoRebuildModels(db *gorm.DB) error {
 			return err
 		}
 
+		// 删除备份表
 		if err := db.Migrator().DropTable(tempTableName); err != nil {
 			log.Error("删除旧表 %s 失败: %v", tempTableName, err)
 			return err
@@ -134,6 +146,7 @@ func AutoRebuildModels(db *gorm.DB) error {
 
 		log.Info("模型 [%s] 重建完成", tableName)
 	}
+
 	return nil
 }
 

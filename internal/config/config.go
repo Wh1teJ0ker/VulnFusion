@@ -3,6 +3,7 @@ package config
 import (
 	"gopkg.in/yaml.v3"
 	"os"
+	"strconv"
 	"time"
 )
 
@@ -25,6 +26,11 @@ type Config struct {
 	Database struct {
 		Path string `yaml:"path"`
 	} `yaml:"database"`
+
+	// ✅ 新增 nuclei 配置
+	Nuclei struct {
+		TemplatePath string `yaml:"template_path"`
+	} `yaml:"nuclei"`
 }
 
 var Global Config
@@ -62,4 +68,12 @@ func GetJWTSecret() string {
 // GetDBPath 返回 SQLite 数据库路径
 func GetDBPath() string {
 	return Global.Database.Path
+}
+
+func GetListenAddr() string {
+	return ":" + strconv.Itoa(Global.Port)
+}
+
+func GetNucleiTemplatePath() string {
+	return Global.Nuclei.TemplatePath
 }

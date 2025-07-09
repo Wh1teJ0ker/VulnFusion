@@ -4,22 +4,69 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9745f663-ceb5-4e1d-8db3-bb7de9d75ce9" name="更改" comment="add dev">
-      <change afterPath="$PROJECT_DIR$/internal/db/model.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/internal/model/result.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/internal/model/task.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/internal/model/user.go" afterDir="false" />
+    <list default="true" id="9745f663-ceb5-4e1d-8db3-bb7de9d75ce9" name="更改" comment="add db">
+      <change afterPath="$PROJECT_DIR$/data/templates/test.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/AuthButton.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/Layout/Header.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/Layout/Layout.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/Layout/Sidebar.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/LoadingSpinner.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/pages/Dashboard/index.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/pages/LoginPage/index.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/pages/NotFound/index.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/pages/ResultDetail/index.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/pages/ResultList/index.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/pages/TaskDetail/index.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/pages/TaskList/CreateTaskForm.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/pages/TaskList/index.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/pages/UserManagement/index.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/services/auth.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/services/result.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/services/task.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/services/user.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/store/user.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/utils/request.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/internal/scanner/init.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/db/db_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/db/model_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/api/types.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/api/user.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/auth/middleware.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/auth/middleware.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/eslint.config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/public/vite.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/App.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/App.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/assets/react.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/index.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/main.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/vite.config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal/auth/jwt.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/auth/jwt.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal/bootstrap/init.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/bootstrap/init.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/internal/config/config.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/config/config.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal/db/db.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/db/db.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal/db/model.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/db/model.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/internal/log/log.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/log/log.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/storage/db.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/db/db.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/storage/models/result.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/storage/models/task.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/storage/models/user.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal/models/result.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/models/result.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal/models/task.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/models/task.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal/scanner/executor.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/scanner/executor.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal/scanner/parser.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/scanner/parser.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/internal/utils/crypto.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/utils/crypto.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/internal/utils/helpers.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/utils/helpers.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/auth/jwt_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/test/auth/jwt_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/api/auth.go" beforeDir="false" afterPath="$PROJECT_DIR$/web/api/auth.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/api/result.go" beforeDir="false" afterPath="$PROJECT_DIR$/web/api/result.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/api/task.go" beforeDir="false" afterPath="$PROJECT_DIR$/web/api/task.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/middleware/auth.go" beforeDir="false" afterPath="$PROJECT_DIR$/web/middleware/auth.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/middleware/cors.go" beforeDir="false" afterPath="$PROJECT_DIR$/web/middleware/cors.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/router/routes.go" beforeDir="false" afterPath="$PROJECT_DIR$/web/router/routes.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,7 +80,7 @@
       </list>
     </option>
   </component>
-  <component name="GOROOT" url="file:///Applications/ServBay/package/go/1.22/1.22.12" />
+  <component name="GOROOT" url="file:///Applications/ServBay/package/go/1.22/1.22.12/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.10.darwin-arm64" />
   <component name="Git.Settings">
     <option name="PREVIOUS_COMMIT_AUTHORS">
       <list>
@@ -70,7 +117,9 @@
   &quot;associatedIndex&quot;: 7
 }</component>
   <component name="ProjectId" id="2zFiDbETdKTP0PDVQdaGL6F20RI" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -88,9 +137,11 @@
     "Go 构建.main.go.executor": "Run",
     "Go 构建.scan.executor": "Run",
     "Go 构建.web.executor": "Run",
+    "Go 测试.db_test.go.executor": "Run",
     "Go 测试.go test VulnFusion.executor": "Run",
     "Go 测试.jwt_test.go.executor": "Run",
     "Go 测试.middleware_test.executor": "Run",
+    "Go 测试.model_test.go.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "RunOnceActivity.go.formatter.settings.were.checked": "true",
@@ -99,13 +150,13 @@
     "git-widget-placeholder": "main",
     "go.import.settings.migrated": "true",
     "go.sdk.automatically.set": "true",
-    "last_opened_file_path": "/Users/joker/code/VulnFusion",
+    "last_opened_file_path": "/Users/joker/code/VulnFusion/frontend/src/assets",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "npm.dev.executor": "Run",
     "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "preferences.pluginManager"
+    "settings.editor.selected.configurable": "go.sdk"
   },
   "keyToStringList": {
     "DatabaseDriversLRU": [
@@ -116,18 +167,39 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/bin" />
+      <recent name="$PROJECT_DIR$/frontend/src/assets" />
+      <recent name="$PROJECT_DIR$/frontend/src/router" />
+      <recent name="$PROJECT_DIR$/frontend/src/pages" />
+      <recent name="$PROJECT_DIR$/test_frontend/src/components" />
+      <recent name="$PROJECT_DIR$/frontend/src/components" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/frontend/src" />
+      <recent name="$PROJECT_DIR$/frontend" />
       <recent name="$PROJECT_DIR$/internal/storage" />
       <recent name="$PROJECT_DIR$/internal" />
       <recent name="$PROJECT_DIR$/internal/storage/db" />
-      <recent name="$PROJECT_DIR$/test/auth" />
-      <recent name="$PROJECT_DIR$/web/frontend/backup" />
     </key>
   </component>
-  <component name="RunManager" selected="Go 测试.middleware_test">
+  <component name="RunManager" selected="Go 构建.main">
+    <configuration name="main" type="GoApplicationRunConfiguration" factoryName="Go Application">
+      <module name="VulnFusion" />
+      <working_directory value="$PROJECT_DIR$" />
+      <kind value="FILE" />
+      <package value="VulnFusion" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$/main.go" />
+      <method v="2" />
+    </configuration>
+    <configuration name="db_test.go" type="GoTestRunConfiguration" factoryName="Go Test" nameIsGenerated="true">
+      <module name="VulnFusion" />
+      <working_directory value="$PROJECT_DIR$" />
+      <kind value="FILE" />
+      <package value="VulnFusion" />
+      <filePath value="$PROJECT_DIR$/test/db/db_test.go" />
+      <framework value="gotest" />
+      <method v="2" />
+    </configuration>
     <configuration name="jwt_test.go" type="GoTestRunConfiguration" factoryName="Go Test">
       <module name="VulnFusion" />
       <working_directory value="$PROJECT_DIR$" />
@@ -148,9 +220,32 @@
       <framework value="gotest" />
       <method v="2" />
     </configuration>
+    <configuration name="model_test.go" type="GoTestRunConfiguration" factoryName="Go Test">
+      <module name="VulnFusion" />
+      <working_directory value="$PROJECT_DIR$" />
+      <kind value="FILE" />
+      <package value="VulnFusion" />
+      <filePath value="$PROJECT_DIR$/test/db/model_test.go" />
+      <framework value="gotest" />
+      <method v="2" />
+    </configuration>
+    <configuration name="dev" type="js.build_tools.npm" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/frontend/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="dev" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
     <list>
+      <item itemvalue="Go 构建.main" />
+      <item itemvalue="Go 测试.db_test.go" />
+      <item itemvalue="Go 测试.model_test.go" />
       <item itemvalue="Go 测试.jwt_test.go" />
       <item itemvalue="Go 测试.middleware_test" />
+      <item itemvalue="npm.dev" />
     </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="true" />
@@ -168,7 +263,8 @@
     <MESSAGE value="add log module" />
     <MESSAGE value="discard" />
     <MESSAGE value="add dev" />
-    <option name="LAST_COMMIT_MESSAGE" value="add dev" />
+    <MESSAGE value="add db" />
+    <option name="LAST_COMMIT_MESSAGE" value="add db" />
   </component>
   <component name="VgoProject">
     <settings-migrated>true</settings-migrated>

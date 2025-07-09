@@ -14,6 +14,9 @@ admin:
   username: admin
   password: admin123            # 初始密码，建议运行后强制修改
 
+nuclei:
+  template_path: ./data/templates
+
 # 数据库配置
 database:
   path: ./data/vulnfusion.db    # SQLite 文件路径

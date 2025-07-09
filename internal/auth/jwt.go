@@ -1,6 +1,7 @@
 package auth
 
 import (
+	"VulnFusion/internal/config"
 	"crypto/rand"
 	"encoding/base64"
 	"errors"
@@ -12,7 +13,7 @@ import (
 )
 
 type CustomClaims struct {
-	UserID   int    `json:"user_id"`
+	UserID   uint   `json:"user_id"` // ✅ 改为 uint
 	Username string `json:"username"`
 	Role     string `json:"role"`
 	jwt.RegisteredClaims
@@ -21,21 +22,31 @@ type CustomClaims struct {
 var jwtSecret []byte
 var blacklist = make(map[string]int64)
 var blacklistMu sync.RWMutex
+var once sync.Once
 
 func LoadOrGenerateJWTSecret() ([]byte, error) {
-	if len(jwtSecret) > 0 {
-		return jwtSecret, nil
-	}
-	secret := make([]byte, 32)
-	_, err := rand.Read(secret)
+	var err error
+	once.Do(func() {
+		cfgSecret := config.GetJWTSecret()
+		if cfgSecret != "" {
+			jwtSecret = []byte(cfgSecret)
+		} else {
+			secret := make([]byte, 32)
+			_, e := rand.Read(secret)
+			if e != nil {
+				err = e
+				return
+			}
+			jwtSecret = secret
+		}
+	})
 	if err != nil {
 		return nil, err
 	}
-	jwtSecret = secret
 	return jwtSecret, nil
 }
 
-func GenerateToken(userID int, username string, role string, duration time.Duration) (string, error) {
+func GenerateToken(userID uint, username string, role string, duration time.Duration) (string, error) {
 	secret, err := LoadOrGenerateJWTSecret()
 	if err != nil {
 		return "", err
@@ -54,13 +65,13 @@ func GenerateToken(userID int, username string, role string, duration time.Durat
 	return token.SignedString(secret)
 }
 
-func GenerateRefreshToken(userID int, duration time.Duration) (string, error) {
+func GenerateRefreshToken(userID uint, duration time.Duration) (string, error) {
 	secret, err := LoadOrGenerateJWTSecret()
 	if err != nil {
 		return "", err
 	}
 	claims := jwt.RegisteredClaims{
-		Subject:   base64.StdEncoding.EncodeToString([]byte(strconv.Itoa(userID))),
+		Subject:   base64.StdEncoding.EncodeToString([]byte(strconv.Itoa(int(userID)))),
 		ExpiresAt: jwt.NewNumericDate(time.Now().Add(duration)),
 		IssuedAt:  jwt.NewNumericDate(time.Now()),
 		ID:        generateJTI(),

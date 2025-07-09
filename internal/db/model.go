@@ -10,11 +10,12 @@ type User struct {
 }
 
 type Task struct {
-	ID        int    `gorm:"primaryKey"`
-	UserID    int    `gorm:"index"`
-	Target    string `gorm:"not null"`
-	Template  string
-	CreatedAt int64
+	ID        uint      `gorm:"primaryKey"`
+	UserID    uint      `gorm:"not null"`        // 所属用户
+	Target    string    `gorm:"not null"`        // 扫描目标
+	Template  string    `gorm:"not null"`        // nuclei 模板名称
+	CreatedAt time.Time `gorm:"autoCreateTime"`  // 创建时间
+	Status    string    `gorm:"default:pending"` // 状态：pending、running、done、failed
 }
 
 type Result struct {
