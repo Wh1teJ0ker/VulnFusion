@@ -6,6 +6,7 @@ import (
 	"VulnFusion/web/router"
 	"github.com/gin-gonic/gin"
 	"log"
+	"net/http"
 
 	_ "VulnFusion/docs" // ✅ 加载 swag 生成的文档文件
 	swaggerFiles "github.com/swaggo/files"
@@ -35,6 +36,14 @@ func main() {
 
 	// 注册 Swagger 路由
 	r.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerFiles.Handler))
+
+	// 挂载静态资源在 /web，避免与 API 路由冲突
+	r.StaticFS("/web", http.Dir("./frontend/dist"))
+
+	// fallback 到前端首页（确保前端用的是 HTML5 History 模式路由）
+	r.NoRoute(func(c *gin.Context) {
+		c.File("./frontend/dist/index.html")
+	})
 
 	// 启动服务
 	addr := config.GetListenAddr() // e.g., ":8080"

@@ -3,6 +3,7 @@ import { Table, Button, Message, Tag } from '@arco-design/web-react';
 import { useUserStore } from '../../store/user';
 import { getTasks, getAllTasks } from '../../services/task';
 import { useNavigate } from 'react-router-dom';
+import CreateTaskForm from './CreateTaskForm'; // ✅ 引入创建任务抽屉组件
 
 export default function TaskList() {
     const [data, setData] = useState([]);
@@ -14,8 +15,6 @@ export default function TaskList() {
         setLoading(true);
         try {
             const res = role === 'admin' ? await getAllTasks() : await getTasks();
-
-            // 字段规范化，转换为小写 key
             const normalized = (res || []).map(item => ({
                 id: item.ID,
                 target: item.Target,
@@ -24,7 +23,6 @@ export default function TaskList() {
                 userId: item.UserID,
                 createdAt: item.CreatedAt,
             }));
-
             setData(normalized);
         } catch (err) {
             Message.error('加载任务失败');
@@ -32,7 +30,6 @@ export default function TaskList() {
             setLoading(false);
         }
     };
-
 
     useEffect(() => {
         fetchTasks();
@@ -70,7 +67,18 @@ export default function TaskList() {
 
     return (
         <div>
-            <h2 style={{ marginBottom: 16 }}>任务列表</h2>
+            <div
+                style={{
+                    display: 'flex',
+                    justifyContent: 'space-between',
+                    alignItems: 'center',
+                    marginBottom: 16,
+                }}
+            >
+                <h2 style={{ margin: 0 }}>任务列表</h2>
+                <CreateTaskForm onSuccess={fetchTasks} />
+            </div>
+
             <Table
                 rowKey="id"
                 columns={columns}

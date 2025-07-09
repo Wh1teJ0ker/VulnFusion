@@ -4,69 +4,15 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9745f663-ceb5-4e1d-8db3-bb7de9d75ce9" name="更改" comment="add db">
-      <change afterPath="$PROJECT_DIR$/data/templates/test.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/components/AuthButton.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/components/Layout/Header.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/components/Layout/Layout.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/components/Layout/Sidebar.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/components/LoadingSpinner.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/pages/Dashboard/index.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/pages/LoginPage/index.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/pages/NotFound/index.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/pages/ResultDetail/index.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/pages/ResultList/index.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/pages/TaskDetail/index.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/pages/TaskList/CreateTaskForm.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/pages/TaskList/index.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/pages/UserManagement/index.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/services/auth.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/services/result.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/services/task.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/services/user.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/store/user.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/utils/request.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/internal/scanner/init.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/db/db_test.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/db/model_test.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/api/types.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/api/user.go" afterDir="false" />
+    <list default="true" id="9745f663-ceb5-4e1d-8db3-bb7de9d75ce9" name="更改" comment="finished v1.0">
+      <change afterPath="$PROJECT_DIR$/data/bin/nuclei" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/eslint.config.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/package-lock.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/public/vite.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/App.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/App.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/assets/react.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/index.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/vite.config.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/auth/jwt.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/auth/jwt.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/bootstrap/init.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/bootstrap/init.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/config/config.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/config/config.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/db/db.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/db/db.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/db/model.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/db/model.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/log/log.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/log/log.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/models/result.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/models/result.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/models/task.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/models/task.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/scanner/executor.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/scanner/executor.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/scanner/parser.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/scanner/parser.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/utils/crypto.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/utils/crypto.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/internal/utils/helpers.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/utils/helpers.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/vulnfusion.db" beforeDir="false" afterPath="$PROJECT_DIR$/data/vulnfusion.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dev" beforeDir="false" afterPath="$PROJECT_DIR$/dev" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/TaskList/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/TaskList/index.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/vite.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/vite.config.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/api/auth.go" beforeDir="false" afterPath="$PROJECT_DIR$/web/api/auth.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/api/result.go" beforeDir="false" afterPath="$PROJECT_DIR$/web/api/result.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/api/task.go" beforeDir="false" afterPath="$PROJECT_DIR$/web/api/task.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/middleware/auth.go" beforeDir="false" afterPath="$PROJECT_DIR$/web/middleware/auth.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/middleware/cors.go" beforeDir="false" afterPath="$PROJECT_DIR$/web/middleware/cors.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/router/routes.go" beforeDir="false" afterPath="$PROJECT_DIR$/web/router/routes.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -154,6 +100,7 @@
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "npm.build.executor": "Run",
     "npm.dev.executor": "Run",
     "run.code.analysis.last.selected.profile": "pProject Default",
     "settings.editor.selected.configurable": "go.sdk"
@@ -229,6 +176,16 @@
       <framework value="gotest" />
       <method v="2" />
     </configuration>
+    <configuration name="build" type="js.build_tools.npm" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/frontend/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="build" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
     <configuration name="dev" type="js.build_tools.npm" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/frontend/package.json" />
       <command value="run" />
@@ -245,6 +202,7 @@
       <item itemvalue="Go 测试.model_test.go" />
       <item itemvalue="Go 测试.jwt_test.go" />
       <item itemvalue="Go 测试.middleware_test" />
+      <item itemvalue="npm.build" />
       <item itemvalue="npm.dev" />
     </list>
   </component>
@@ -264,7 +222,8 @@
     <MESSAGE value="discard" />
     <MESSAGE value="add dev" />
     <MESSAGE value="add db" />
-    <option name="LAST_COMMIT_MESSAGE" value="add db" />
+    <MESSAGE value="finished v1.0" />
+    <option name="LAST_COMMIT_MESSAGE" value="finished v1.0" />
   </component>
   <component name="VgoProject">
     <settings-migrated>true</settings-migrated>

